@@ -5,6 +5,7 @@
 \usepackage{sty/beamer_style}
 
 
+
 \AtBeginSection[]{
   \AtBeginSection[]
   {
@@ -22,7 +23,7 @@
 }
 
 %THIS IS THE INFO AT THE BOTTOM OF YOUR FRAMES
-\title{Presentation}
+\title{BART}
 \author{J.S. Rehak}
 \date{June \nth{3}, 2020}
 
@@ -33,7 +34,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[plain]
 
-\title{Presentation Title\\ \large{Subtitle}}
+\title{Assessing the Effectiveness of Acceleration Methods for
+  Deterministic Neutron Transport Solvers \\ \large{Building a new tool for developers.}}
 
 \author{
 \begin{tabular}{c}
@@ -43,7 +45,7 @@ J. S. Rehak\\
 \end{tabular}}
 \date{\vspace{-20pt}\\
   \begin{tabular}{c}
-    \large{Presentation Context} \\
+    \large{ANS Summer Meeting: Acceleration Methods} \\
  June \nth{3}, 2020
   \end{tabular}
 }
@@ -60,10 +62,11 @@ J. S. Rehak\\
  \end{minipage}
 \end{frame}
 
-\section{Boltzman Transport Equation}
-
-\frame[c]{\frametitle{Steady-state Boltzman Transport Equation}
-
+% Introduction (2 min)
+\section{Introduction}
+% - SS Boltzman Equation
+\begin{frame}
+  \frametitle{Steady-state Boltzman Transport Equation}
   Our problem of interest is the time-independent transport equation
   on a domain of interest $\rvec \in V$~\cite{lewis1993},
   
@@ -76,8 +79,42 @@ with a given boundary condition,
 \begin{align*}
   \psi(\rvec,E,\oh) = \Gamma(\rvec, E, \oh), \quad \rvec \in \partial V,
   \quad \oh \cdot \hat{n} < 0
-\end{align*}
-}
+\end{align*}  
+\end{frame}
+% - Iterative methods
+% -- Power iteration: dominance ratio (NDA)
+% -- Scattering-source iteration: high scattering ratio (DSA)
+% Assessing acceleration methods (5 min)
+% - Definition of acceleration (3 min)
+% -- Error removal per unit work
+% -- Computational work definition: inversions
+% -- When this work assumption breaks down
+% - Race car analogy
+% -- First past-the-post assessment
+% -- Need a standard test track with a standard car that is accessible
+% - Motivation for a new tool -- test track
+% BART Code Goals (10 min)
+% - Design goals
+% -- Reliving some development burden
+% -- Provide a controlled environment
+% -- Provide instrumentation
+% - Polymorphism
+% - Built-in instrumentation
+% -- Fourier analysis (possibility)
+% - Benchmarks provided with code
+% State of the code (2 min)
+% - Finite element (1 min)
+% -- Dealii
+% -- Second order forms (SAAF, Diffusion)
+% -- NDA being implemented
+% - Code details (1 min)
+% -- C++17 (Planned C++20)
+% -- GoogleTest/GoogleMock
+% -- Coverage and CI
+% -- Protocol Buffers
+% Future work (1 min)
+% - More acceleration methods
+% - Combinations of acceleration methods
 
 \section{Section 2}
 \frame[c]{\frametitle{Other stuff}
