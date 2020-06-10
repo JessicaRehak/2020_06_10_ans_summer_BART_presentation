@@ -110,17 +110,17 @@ with a given boundary condition,
   \end{itemize}
   \onslide<4->{
   \begin{align*}
-    \mat{L}\mat{\Psi} = \mat{M}\left[\mat{S}
-    + \frac{1}{k}\mat{F}\right]\mat{\Phi}
+    \mat{L}\vec{\Psi} = \mat{M}\left[\mat{S}
+    + \frac{1}{k}\mat{F}\right]\vec{\Phi}
   \end{align*}}
 \onslide<5->{
   \begin{tabular}{lr}
-    Gauss-Seidel source iteration &   $\mat{\Psi}_{(k+1)} = \mat{L}^{-1}\mat{M}\left[\mat{S}\mat{\Phi}_{(k)}
+    (Scattering) source iteration &   $\vec{\Psi}_{(k+1)} = \mat{L}^{-1}\mat{M}\left[\mat{S}\vec{\Phi}_{(k)}
                                     +
-                                    \frac{1}{k}\mat{F}\mat{\Phi}_{(0)}\right]$\\
+                                    \frac{1}{k}\mat{F}\vec{\Phi}_{(0)}\right]$\\
     & \\
-        Power iteration &   $\mat{\Psi}_{(k+1)} = \mat{L}^{-1}\mat{M}\left[\mat{S}\mat{\Phi}_{(0)}
-    + \frac{1}{k}\mat{F}\mat{\Phi}_{(k)}\right]$
+        Power iteration &   $\vec{\Psi}_{(k+1)} = \mat{L}^{-1}\mat{M}\left[\mat{S}\vec{\Phi}_{(0)}
+    + \frac{1}{k}\mat{F}\vec{\Phi}_{(k)}\right]$
   \end{tabular}
   
 }
@@ -181,9 +181,9 @@ with total computational work
     \sum_{\ell = 1}^{N'}w'_{(\ell)} <  \sum_{\ell = 1}^Nw_{(\ell)}
   \end{equation*}
 \pause
-  \begin{block}{Note}
-    The same amount of error needs to be removed for the problem to
-    converge, regardless of the method used to remove it.
+  \begin{block}{Why acceleration methods?}
+    We can (and must) remove the same amount of error to achieve
+    convergence using less (or a finite amount) of computational work.
   \end{block}
 \end{frame}
 % -- Error removal per unit work
@@ -204,7 +204,7 @@ with total computational work
   \item Writing new codes can be time consuming and costly. % May not
                                 % have the rigorous testing that a
                                 % production code has
-  \item Reproducibility is difficult.
+  \item Reproducibility and testing is difficult.
   \end{itemize}\vspace{1em}
   \pause
   \begin{block}{What do we need?}
@@ -233,6 +233,10 @@ with total computational work
   \pause
     \begin{equation*}
     \sum_{\ell = 1}^{N'}w'_{(\ell)} <  \sum_{\ell = 1}^Nw_{(\ell)}
+  \end{equation*}
+  \pause
+  \begin{equation*}
+    w_{(\ell)} = w_{(\text{inv})} + w_{(\text{other})} \approx w_{\text{(inv)}}
   \end{equation*}
   \pause
     \begin{equation*}
