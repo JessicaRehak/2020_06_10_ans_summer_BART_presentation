@@ -382,19 +382,35 @@ with total computational work
   BART will include the ability to \textit{instrument} a solve
   to gather enough data to draw useful conclusions about the effectiveness of
   acceleration schemes.
+  \pause
 \begin{itemize}
   \item Storage of solve parameters (eigenvalues, fluxes).
   \item Storage of hierarchy of iterations.
   \item Calculation and storage of error or residual.
   \item Analysis of Fourier error modes coefficients.
   \end{itemize}
-
 \pause
-  \begin{block}{}
+  \begin{block}{Important}
     Adding new instrumentation must be easy!
   \end{block}
 \end{frame}
 % State of the code (2 min)
+\begin{frame}
+  \frametitle{Goals Reprise}
+  To create a code that, 
+  \vspace{1em}
+  \begin{enumerate}
+    \setlength\itemsep{1em}
+  \item relieves some of the burden of implementing a novel acceleration method,
+  \item provides a controlled environment for measuring the
+    effectiveness of the novel method, and,
+  \item provides tools for verifying the basis for effectiveness.
+  \end{enumerate}
+
+  \begin{block}
+    Getting goal three right relies on doing one and two really well.
+  \end{block}
+\end{frame}
 \section{Status and future work}
 % - Finite element (1 min)
 \begin{frame}
