@@ -1,4 +1,4 @@
-# Beamer Presentation Base
+# BART Presentation: ANS Summer Meeting
+Date: 6/10/2020
 
-This is my beamer presentation base for giving presentations while a
-grad student at University of California, Berkeley.
+This presentation was given at the Acceleration Methods technical session of the American Nuclear Society Summer Meeting.
